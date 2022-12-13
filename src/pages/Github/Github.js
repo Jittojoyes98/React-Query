@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useQuery, useQueryClient } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
 import PostDetails from "../PostDetails/PostDetails";
 import "./github.css";
@@ -32,18 +32,12 @@ const Github = () => {
   const [post, setPost] = useState(null);
 
   if (isLoading) {
-    console.log("---loading--");
-    console.log(isFetching);
-    return "Loading...";
+    return "Loading in progress...";
   }
-  //   if (isFetching) {
-  //     console.log("---FETCHING--");
-  //     return "Fetching...";
-  //   }
+
   if (error) {
     return "An error occured";
   }
-  console.log(post);
   return (
     <div>
       <h1>Blog Posts</h1>
